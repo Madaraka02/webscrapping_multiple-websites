@@ -123,7 +123,7 @@ def index():
                     jumia_image.append(img['data-src'])
                     # jumia_link.append(product['href'])
 
-                    print(product['href'])
+                    print(link)
 
 
 
