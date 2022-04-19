@@ -13,7 +13,86 @@
     <div>
         <h1 class="text-center">Home page testing</h1>
         <p class="text-center">What are looking for to compare prices</p>
-   
+        <div class="container mb-2">
+            <h4>JAMBO</h4>
+            <div class="row">
+                
+
+        {% for n,p,i,l in jambo %}
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="{{i}}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">{{ n }}</p>
+                    <p class="card-text">{{p}}</p>
+                    <a href="https://www.jamboshop.com/{{l}}" class="btn btn-primary">View in Site</a>
+                </div>
+            </div>
+        </div>
+ 
+    {% endfor %}
+</div>
+</div>
+
+<div class="container mt-3 mb-2">
+    <h4>JUMIA</h4>
+    <div class="row">
+        
+
+{% for n,p,i in jumia %}
+<div class="col-md-3">
+    <div class="card">
+        <img class="card-img-top" src="{{i}}" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">{{ n }}</p>
+            <p class="card-text">{{p}}</p>
+
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+</div>
+</div>
+<div class="container mt-3 mb-2">
+    <h4>JIJI</h4>
+    <div class="row">
+        
+
+{% for n,p,i,l in jiji %}
+<div class="col-md-3">
+    <div class="card">
+        <img class="card-img-top" src="{{i}}" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">{{n}}</p>
+            <p class="card-text">{{p}}</p>
+            <a href="{{l}}" class="btn btn-primary">View in Site</a>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+</div>
+</div>
+<div class="container mt-3 mb-2">
+    <h4>AVECHI</h4>
+    <div class="row">
+        
+
+{% for n,i,l in avechi %}
+<div class="col-md-3">
+    <div class="card">
+        <img class="card-img-top" src="{{i}}" alt="Card image cap">
+        <div class="card-body">
+            <p class="card-text">{{n}}</p>
+            <a href="{{l}}" class="btn btn-primary">View in Site</a>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+</div>
+</div>
     </div>
 
 
