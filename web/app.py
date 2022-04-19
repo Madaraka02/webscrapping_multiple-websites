@@ -116,7 +116,7 @@ def index():
             soup = BeautifulSoup(page.content, "html.parser")
             products = soup.find_all(class_="c-prd")
 
-            for product in products:
+            for product in products[:32]:
 
                 if product:
 
