@@ -23,13 +23,16 @@
     <div class="row">
         
 
-{% for n,p,i in jumia %}
+{% for n,p,i,l in jumia %}
 <div class="col-md-3 mt-2 mb-2 shadow-lg">
     <div class="card shadow-lg">
         <img class="card-img-top" src="{{i}}"  alt="image" height="208" width="215">
         <div class="card-body">
             <p class="card-text">{{ n }}</p>
             <p class="card-text">{{p}}</p>
+            {% if l not none%}
+            <a href="https://www.jumia.co.ke/{{l}}" class="btn btn-primary">View in Site</a>
+            {% endif %}
 
         </div>
     </div>

@@ -179,7 +179,7 @@ def index():
 
 
     return render_template("index.html", jambo=zip(jambo_title,jambo_price,jambo_image,jambo_link),
-    jumia=zip(jumia_title,jumia_price,jumia_image),
+    jumia=zip(jumia_title,jumia_price,jumia_image,jumia_link),
     jiji=zip(jiji_title,jiji_price,jiji_image,jiji_link),
     avechi=zip(avechi_title,avechi_image,avechi_link))                
 
