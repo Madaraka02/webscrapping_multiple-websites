@@ -86,7 +86,7 @@ def index():
     weburls=dict(zip(webs, urls))
     
     for website, url in weburls.items():
-        print("PRODUCT FROM:" +website)
+        print("FETCHING PRODUCT FROM:" +website)
 
 
         if website == "jiji":
