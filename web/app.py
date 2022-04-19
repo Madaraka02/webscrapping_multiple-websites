@@ -30,8 +30,8 @@ def index():
     if request.method == 'POST':
   
         if request.form['name']:
-            searches.append({'name': request.form['name']})
-        
+            searches.append(request.form['name'])
+    print(searches)     
     global avechi_title
     global avechi_image
     global avechi_link
