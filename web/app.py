@@ -14,7 +14,8 @@ from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
-@app.route("/")
+
+@app.route("/", methods=['GET', 'POST'])
 
 def index():
     
@@ -26,7 +27,11 @@ def index():
     }
 
     searches = list()
-    items_found = list()
+    if request.method == 'POST':
+  
+        if request.form['name']:
+            searches.append({'name': request.form['name']})
+        
     global avechi_title
     global avechi_image
     global avechi_link
@@ -65,8 +70,8 @@ def index():
     jiji_image = list()
     jiji_link = list()
 
-    look = input("what are you looking for: ")
-    searches.append(look)
+    # look = input("what are you looking for: ")
+    # searches.append(look)
 
     urls = list()
     webs =list()
@@ -107,7 +112,7 @@ def index():
 
             page = requests.get(url)
             soup = BeautifulSoup(page.content, "html.parser")
-            products = soup.find_all(class_="core")
+            products = soup.find_all(class_="c-prd")
 
             for product in products:
 
@@ -121,9 +126,9 @@ def index():
                     jumia_title.append(title)
                     jumia_price.append(price)
                     jumia_image.append(img['data-src'])
-                    # jumia_link.append(product['href'])
+                    jumia_link.append(link)
 
-                    print(link)
+                   
 
 
 
