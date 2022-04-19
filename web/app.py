@@ -128,7 +128,9 @@ def index():
                     jumia_title.append(title)
                     jumia_price.append(price)
                     jumia_image.append(img['data-src'])
-                    jumia_link.append(link)
+                    jumia_link.append(link.get('href'))
+
+                    
 
                    
 
