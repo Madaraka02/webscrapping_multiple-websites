@@ -176,6 +176,7 @@ def index():
                     avechi_title.append(title)
                     avechi_image.append(img['src'])
                     avechi_link.append(link['href'])
+                    
 
 
     return render_template("index.html", jambo=zip(jambo_title,jambo_price,jambo_image,jambo_link),
