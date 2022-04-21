@@ -207,6 +207,7 @@ def index():
                     pigiame_image.append(img['src'])
                     pigiame_link.append(link['href'])
                     pigiame_price.append(price)
+                    # print(pigiame_price)
 
 
     return render_template("index.html", jambo=zip(jambo_title,jambo_price,jambo_image,jambo_link),
