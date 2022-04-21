@@ -23,7 +23,8 @@ def index():
     "jiji":"https://jiji.co.ke/search?query={}",
     "jumia":"https://www.jumia.co.ke/catalog/?q={}",
     "jamboShop":"https://www.jamboshop.com/search?k={}",
-    "avechi":"https://avechi.co.ke/?s={}"
+    "avechi":"https://avechi.co.ke/?s={}",
+    "pigiame":"https://www.pigiame.co.ke/classifieds?q={}"
     }
 
     searches = list()
@@ -41,6 +42,16 @@ def index():
     avechi_title = list()
     avechi_image = list()
     avechi_link = list()
+
+    global pigiame_title
+    global pigiame_price
+    global pigiame_image
+    global pigiame_link
+
+    pigiame_title = list()
+    pigiame_image = list()
+    pigiame_link = list()
+    pigiame_price = list()
 
     global jambo_title
     global jambo_price
@@ -177,12 +188,32 @@ def index():
                     avechi_image.append(img['src'])
                     avechi_link.append(link['href'])
                     
+        elif website == "pigiame":
+
+            page = requests.get(url)
+            soup = BeautifulSoup(page.content, "html.parser")
+            products = soup.find_all(class_="listing-card")
+
+            for product in products:
+
+                if product:
+
+                    title = product.find(class_='listing-card__header__title').get_text()
+                    price = product.find(class_='listing-card__price').get_text()
+                    link = product.find('a')
+                    img = product.find('img')
+
+                    pigiame_title.append(title)
+                    pigiame_image.append(img['src'])
+                    pigiame_link.append(link['href'])
+                    pigiame_price.append(price)
 
 
     return render_template("index.html", jambo=zip(jambo_title,jambo_price,jambo_image,jambo_link),
     jumia=zip(jumia_title,jumia_price,jumia_image,jumia_link),
     jiji=zip(jiji_title,jiji_price,jiji_image,jiji_link),
-    avechi=zip(avechi_title,avechi_image,avechi_link))                
+    avechi=zip(avechi_title,avechi_image,avechi_link),
+    pigiame=zip(pigiame_title,pigiame_price,pigiame_image,pigiame_link))                
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -25,7 +25,7 @@
 
 {% for n,p,i,l in jumia %}
 <div class="col-md-3 mt-2 mb-2 shadow-lg">
-    <div class="card shadow-lg" style="height: 440.88px;">
+    <div class="card shadow-lg">
         <img class="card-img-top" src="{{i}}"  alt="image" height="208" width="253">
         <div class="card-body">
             <p class="card-text text-sm">{{ n }}</p>
@@ -73,6 +73,26 @@
         <img class="card-img-top" src="{{i}}"  alt="image" height="208" width="253">
         <div class="card-body">
             <p class="card-text text-sm">{{n}}</p>
+            <p class="card-text">{{p}}</p>
+            <a href="{{l}}" class="btn btn-primary">View in Site</a>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+</div>
+</div>
+<div class="container mt-3 mb-2">
+    <h4 class="text-center mt-2 mb-2">PIGIAME</h4>
+    <div class="row">
+        
+
+{% for n,p,i,l in pigiame %}
+<div class="col-md-3 mt-2 mb-2 shadow-lg">
+    <div class="card shadow-lg" style="height: 440.88px;">
+        <img class="card-img-top" src="{{i}}" alt="image" height="208" width="253">
+        <div class="card-body">
+            <p class="card-text text-sm">{{ n }}</p>
             <p class="card-text">{{p}}</p>
             <a href="{{l}}" class="btn btn-primary">View in Site</a>
         </div>
